@@ -458,9 +458,9 @@ class PyrasiteWindow(Gtk.Window):
             <li><b>gid:</b> %s</li>
             <li><b>nice:</b> %s</li>
         </ul>
-        """ % (self.proc.title, p.status, p.getcwd(), ' '.join(p.cmdline),
-               getattr(p, 'terminal', 'unknown'), time.ctime(p.create_time),
-               p.username, p.uids.real, p.gids.real, p.nice)
+        """ % (self.proc.title, p.status, p.getcwd(), ' '.join(p.cmdline()),
+               getattr(p, 'terminal', 'unknown'), time.ctime(p.create_time()),
+               p.username(), p.uids().real, p.gids().real, p.nice())
 
         self.details_view.load_string(self.details_html, "text/html",
                                       "utf-8", '#')
